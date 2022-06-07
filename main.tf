@@ -5,7 +5,7 @@ provider aws {
 }
 # for sg purpose
 resource "aws_security_group" "security" {
-  name        = "sg-1"
+  name        = "sg1"
   description = "Allow TLS inbound traffic"
   vpc_id      = "vpc-02cb26c9a021be8b1"
 

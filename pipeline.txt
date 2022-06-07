@@ -1,0 +1,19 @@
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Git_checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/balu1391/Fc-task-1.git'
+            }
+        }
+	stage('terraform') {
+            steps {
+                sh'terraform init'
+		sh'terraform plan'
+		sh'terraform apply -auto-approve'
+            }
+        }
+    }
+}
